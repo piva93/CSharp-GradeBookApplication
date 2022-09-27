@@ -41,8 +41,8 @@ namespace GradeBook.UserInterfaces
                 return;
             }
             var name = parts[1];
-            var grade = parts[2];
-            if (grade == "standard")
+            var type = parts[2].ToLower();
+            if (type == "standard")
             {
                 BaseGradeBook gradeBook = new StandardGradeBook(name);
                 Console.WriteLine("Created gradebook {0}.", name);
@@ -50,7 +50,7 @@ namespace GradeBook.UserInterfaces
                 return;
             }
 
-            else if (grade == "ranked")
+            else if (type == "ranked")
             {
                 BaseGradeBook gradeBook = new StandardGradeBook(name);
                 Console.WriteLine("Created gradebook {0}.", name);
@@ -58,9 +58,9 @@ namespace GradeBook.UserInterfaces
                 return;
             }
 
-            else if (grade != "standard" || grade != "ranked")
+            else if (type != "standard" && type != "ranked")
             {
-                Console.WriteLine(grade + " is not a supported type of gradebook, please try again");
+                Console.WriteLine(type + " is not a supported type of gradebook, please try again");
                 return;
             }
 
