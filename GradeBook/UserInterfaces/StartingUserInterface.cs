@@ -58,7 +58,7 @@ namespace GradeBook.UserInterfaces
                 return;
             }
 
-            else (grade != "standard" || grade != "ranked")
+            else if (grade != "standard" || grade != "ranked")
             {
                 Console.WriteLine(grade + " is not a supported type of gradebook, please try again");
                 return;
